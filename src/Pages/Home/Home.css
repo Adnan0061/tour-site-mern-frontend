@@ -1,0 +1,17 @@
+.hero-section{
+    background: url('https://www.insightcities.com/wp-content/uploads/2020/02/insight-cities-hero.jpg');
+    background-size: cover;
+    background-position-y: center;
+    /* background-position-x: right; */
+}
+
+#hero-overlay{
+    background-color: rgba(0,0,0,0.4);
+    z-index: 2;
+
+} 
+
+.card:hover{
+    box-shadow: 3px 3px 15px 1px lightgrey;
+    border-radius: 15px;
+}

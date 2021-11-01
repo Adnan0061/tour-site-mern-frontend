@@ -1,0 +1,41 @@
+import axios from 'axios';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import '../AddTour/Addtour.css'
+
+const AddTour = () => {
+    const { register, handleSubmit, reset } = useForm();
+    
+    const onSubmit = data => {
+        console.log(data);
+        axios.post('http://localhost:5000/tours', data)
+        .then(res => {
+            if(res.data.insertedId){
+                alert('New Tour is successfully added')
+                reset()
+            }
+        })
+    }
+    return (
+        <div>
+            <h1>Add new Tour service</h1>
+            <form className='form' onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("title", { required: true, maxLength: 200 })} placeholder='Title' />
+                <input {...register("duration", { required: true })} placeholder='Duration' />
+                <input {...register("feel", { required: true })} placeholder='Speciality' />
+                <input {...register("spots", { required: true })} placeholder='Spots' />
+                <textarea {...register("description", { required: true})} placeholder="description" />
+                <input type="number" {...register("price")} placeholder="Price per person" />
+                <input {...register("priceText", { required: true })}  defaultValue='USD per person' placeholder='daily at 10 AM and 2 P' />
+                <input {...register("meetingPoint", { required: true })}  placeholder='Meeting Point' />
+                <input {...register("availability", { required: true })}  placeholder='availability(year round)' />
+                <input type="number" {...register("groupSize")} placeholder="groupSize" />
+                <input type="number" {...register("total")} placeholder="Total Cost" />
+                <input {...register("img")} placeholder="image url"/>
+                <input type="submit"/>
+            </form>
+        </div>
+    );
+};
+
+export default AddTour;
