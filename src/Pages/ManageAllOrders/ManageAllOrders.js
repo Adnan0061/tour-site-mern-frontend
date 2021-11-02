@@ -34,7 +34,8 @@ const ManageAllOrders = () => {
                     <th>Name</th>
                     <th>Email</th>
                     <th>Tour Title</th>
-                    <th>Total</th>
+                    <th>Total Cost</th>
+                    <th>Status</th>
                     <th>Update</th>
                     <th>Delete</th>
                     </tr>
@@ -49,6 +50,7 @@ const ManageAllOrders = () => {
                     <td>{order.Email}</td>
                     <td>{order.Title}</td>
                     <td>{order.Total}</td>
+                    <td>{order.Status}</td>
                     <td><Link to={`/update-order/${order._id}`}>Update</Link></td>
                     <td><button onClick={()=>handleDelete(order._id)}>Delete</button></td>
                     </tr>

@@ -38,7 +38,7 @@ const UpdateOrder = () => {
   
     return (
         <div>
-        <h4>Edit and submit to update the <b>{order.Name}</b>'s order</h4>
+        <h4>Edit and submit to update the <b></b>'s order</h4>
         <form className='form' onSubmit={handleSubmit(onSubmit)}>
             <input defaultValue={order.Name} {...register("Name", { required: true })} placeholder='Name' />
             <textarea defaultValue={order.Email} {...register("Email", { required: true })} placeholder="Email" />

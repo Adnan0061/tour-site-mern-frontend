@@ -37,8 +37,11 @@ const TourDetails = () => {
     useEffect(()=>{
         fetch(`https://enigmatic-brushlands-33189.herokuapp.com/tour/${id}`)
         .then(res => res.json())
-        .then(data => setTour(data))
-    },[])
+        .then(data => {
+            setTour(data)
+            reset(data)
+        })
+    },[reset])
 
     // const handleAddToCart = (tour) => {
     //     let newCart = []
@@ -105,7 +108,7 @@ const TourDetails = () => {
                     <form onSubmit={handleSubmit(onSubmit)} className=''>
                     <div>
                         <label htmlFor="Name">Name: </label>
-                        <input type="text" id='Name' placeholder="Name" {...register(`${user.displayName}`, {required: true}, {maxLength: 80})} defaultValue={user.displayName} />
+                        <input type="text" id='Name' placeholder="Name" {...register(`Name`, {required: true}, {maxLength: 80})} defaultValue={user.displayName} />
                     </div>
                         <br/>
                     <div>
