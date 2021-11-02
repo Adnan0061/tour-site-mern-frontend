@@ -11,7 +11,7 @@ const Home = () => {
     // const [ cart, setCart ] = useCart(tours)
 
     useEffect(()=>{
-        fetch('http://localhost:5000/tours')
+        fetch('https://enigmatic-brushlands-33189.herokuapp.com/tours')
         .then(res => res.json())
         .then(data => setTours(data))
     },[])

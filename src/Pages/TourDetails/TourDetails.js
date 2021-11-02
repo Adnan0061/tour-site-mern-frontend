@@ -13,11 +13,11 @@ const TourDetails = () => {
     const { id } = useParams();
     const [ tour, setTour ] = useState([]);
     const { user } = useAuth()
-    const { register, handleSubmit, reset, control, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://enigmatic-brushlands-33189.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -35,7 +35,7 @@ const TourDetails = () => {
     console.log(errors);
      
     useEffect(()=>{
-        fetch(`http://localhost:5000/tour/${id}`)
+        fetch(`https://enigmatic-brushlands-33189.herokuapp.com/tour/${id}`)
         .then(res => res.json())
         .then(data => setTour(data))
     },[])
@@ -137,6 +137,11 @@ const TourDetails = () => {
                         <label htmlFor="Total">${tour.total} USD</label>
                         </div>
                         <br/>
+                        <select hidden {...register("Status")}>
+                            <option value="pending">pending</option>
+                            <option value="confirm">confirm</option>
+                            <option value="hold">hold</option>
+                        </select>
                         <input type="submit" value='Book Tour'/>
                     </form>
                     </div>
