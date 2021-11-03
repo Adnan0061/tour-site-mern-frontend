@@ -38,7 +38,7 @@ const TourDetails = () => {
         .then(res => res.json())
         .then(data => {
             setTour(data)
-            reset()
+            reset(data)
         })
     },[reset])
 
@@ -104,6 +104,7 @@ const TourDetails = () => {
                         <input readOnly hidden type="text" id='time' {...register("time")} defaultValue={tour.time}/>
                         <input readOnly hidden type="groupSize" id='groupSize' {...register("groupSize")} defaultValue={tour.groupSize}/>
                         </div>
+
                         <select hidden {...register("Status")}>
                             <option value="pending">pending</option>
                             <option value="confirm">confirm</option>
