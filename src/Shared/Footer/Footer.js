@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div>
-    <div  style={{backgroundColor: 'rgb(13, 202, 240)'}}>
+    <div  style={{backgroundColor: '#005395'}}>
     <Container>
       <Row className='py-5'>
         <Col xs={12} md={4} lg={4} className='text-start'>
-        <Link to={'/home'} style={{textDecoration: 'none', color: 'white'}}><h2>eHealth</h2></Link>
+        <Link to={'/home'} style={{textDecoration: 'none', color: '#58BDED'}}><h2>Happy Tours</h2></Link>
           <p>eHealth, a online healthcare platform you can trust. Your health and easy healthcare access are always our first priority</p>
         </Col>
 
@@ -18,8 +18,9 @@ const Footer = () => {
           <h4>Quick links</h4>
           <ListGroup variant="flush">
           <Link style={{textDecoration: 'none'}} to={'/home'}><ListGroup.Item className='border-0 bg-transparent'>Home</ListGroup.Item></Link>
-          <Link style={{textDecoration: 'none'}} to={'/doctors'}><ListGroup.Item className='border-0 bg-transparent'>Doctors List</ListGroup.Item></Link>
-          <Link style={{textDecoration: 'none'}} to={'/home'}><ListGroup.Item className='border-0 bg-transparent'>Contact Us</ListGroup.Item></Link>
+          <Link style={{textDecoration: 'none'}} to={'/manage-all-order'}><ListGroup.Item className='border-0 bg-transparent'>Manage Orders</ListGroup.Item></Link>
+          <Link style={{textDecoration: 'none'}} to={'/my-orders'}><ListGroup.Item className='border-0 bg-transparent'>My Orders</ListGroup.Item></Link>
+          <Link style={{textDecoration: 'none'}} to={'/contact'}><ListGroup.Item className='border-0 bg-transparent'>Contact Us</ListGroup.Item></Link>
           </ListGroup>
         </Col>
 
@@ -51,7 +52,7 @@ const Footer = () => {
     <Container>
       <Row>
           <Col className=''>
-            <small>©eHealth 2021. All rights reserved.</small>
+            <small>©Happy Tours 2021. All rights reserved.</small>
           </Col>
       </Row>
     </Container>

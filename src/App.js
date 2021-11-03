@@ -33,6 +33,9 @@ function App() {
           <PrivateRoute path='/tour/:id'>
             <TourDetails></TourDetails>
           </PrivateRoute>
+          <PrivateRoute path='/my-orders'>
+            <MyOrders></MyOrders>
+          </PrivateRoute>
           <PrivateRoute path='/manage-all-order'>
             <ManageAllOrders></ManageAllOrders>
           </PrivateRoute>

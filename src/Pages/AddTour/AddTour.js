@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import '../AddTour/Addtour.css'
 
@@ -8,7 +9,7 @@ const AddTour = () => {
     
     const onSubmit = data => {
         // console.log(data);
-        axios.post('https://enigmatic-brushlands-33189.herokuapp.com/tours', data)
+        axios.post('https://agile-lowlands-13145.herokuapp.com/tours', data)
         .then(res => {
             if(res.data.insertedId){
                 alert('New Tour is successfully added')
@@ -17,7 +18,9 @@ const AddTour = () => {
         })
     }
     return (
-        <div>
+        <Container>
+            <Row className='justify-content-center'> 
+            <Col xs={12} md={9}>
             <h1>Add new Tour service</h1>
             <form className='form' onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("title", { required: true, maxLength: 200 })} placeholder='Title' />
@@ -34,7 +37,9 @@ const AddTour = () => {
                 <input {...register("img")} placeholder="image url"/>
                 <input type="submit"/>
             </form>
-        </div>
+            </Col>
+            </Row>
+        </Container>
     );
 };
 

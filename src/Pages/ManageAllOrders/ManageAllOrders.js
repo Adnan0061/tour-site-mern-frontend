@@ -1,3 +1,4 @@
+import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -6,14 +7,14 @@ const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() =>{
-        fetch(`https://enigmatic-brushlands-33189.herokuapp.com/orders`)
+        fetch(`https://agile-lowlands-13145.herokuapp.com/orders`)
         .then(res => res.json())
         .then(data => setOrders(data))
         // .then(data => console.log(data))
     },[])
 
     const handleDelete = id => {
-        const url = `https://enigmatic-brushlands-33189.herokuapp.com/order/${id}`
+        const url = `https://agile-lowlands-13145.herokuapp.com/order/${id}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -27,14 +28,14 @@ const ManageAllOrders = () => {
     }
     return (
         <div className='m-5 w-75 mx-auto'>
-            <Table striped bordered hover>
+            <Table responsive striped bordered hover>
                 <thead>
                     <tr>
                     <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Tour Title</th>
-                    <th>Total Cost</th>
+                    <th>Total Cost($)</th>
                     <th>Status</th>
                     <th>Update</th>
                     <th>Delete</th>
@@ -48,8 +49,8 @@ const ManageAllOrders = () => {
                     <td>{orders.indexOf(order) + 1}</td>
                     <td>{order.Name}</td>
                     <td>{order.Email}</td>
-                    <td>{order.Title}</td>
-                    <td>{order.Total}</td>
+                    <td>{order.title}</td>
+                    <td>{order.total}</td>
                     <td>{order.Status}</td>
                     <td><Link to={`/update-order/${order._id}`}>Update</Link></td>
                     <td><button onClick={()=>handleDelete(order._id)}>Delete</button></td>
