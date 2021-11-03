@@ -3,10 +3,7 @@ import { Col, Container, Form, Row, Table, Button, useAccordionButton } from 're
 import { Clock, Eye, Search } from 'react-bootstrap-icons';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-// import { Link } from 'react-router-dom';
-// import { addToDb } from '../../utilities/fakedb';
 import useAuth from '../hooks/useAuth';
-// import useCart from '../hooks/useCart';
 
 
 const TourDetails = () => {
