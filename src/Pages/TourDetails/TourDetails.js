@@ -45,33 +45,6 @@ const TourDetails = () => {
         })
     },[reset])
 
-    // const handleAddToCart = (tour) => {
-    //     let newCart = []
-    //     const exist = cart.find(pd => pd.key === tour.key)
-    //     console.log(exist)
-    //     if(exist){
-    //         const rest = cart.filter(pd => pd.key !== tour.key)
-    //         console.log(rest)
-    //         tour.quantity = tour.quantity + 1;
-    //         newCart = [ ...rest, tour ]
-    //         console.log(newCart)
-    //     }
-    //     else{
-    //         tour.quantity = 1;
-    //         newCart = [ ...cart,tour]
-    //         console.log(newCart)
-    //     }
-    //     setCart(newCart)
-    //     addToDb(tour._id);
-    // }
-    // const handleOrder = (e) => {
-    //     e.preventDafault()
-    // }
-
-    // const handleSubmit = (e) => {
-    //     console.log(e)
-    //     e.preventDefault()
-    // }
     return (
         <div>
             <Container>
