@@ -38,7 +38,7 @@ const TourDetails = () => {
         .then(res => res.json())
         .then(data => {
             setTour(data)
-            reset(data)
+            reset()
         })
     },[reset])
 
@@ -91,28 +91,19 @@ const TourDetails = () => {
                         <div>
                         <label htmlFor="Mobile">Mobile No.</label>
                         <br/>
-                        <input type="number" id='Mobile'  {...register("Mobile", {required: true})}/>
+                        <input type="number" id='Mobile'  {...register("Mobile", {required: true}, {maxLength: 20})}/>
                         </div>
                         <div>
                         <label htmlFor="Address">Address</label>
                         <br/>
                         <input type="text" id='Address' {...register("Address", {required: true})}/>
                         </div>
-                        {/* <div>
-                        <input defaultChecked {...register ('Title', {required: true})} id='Title' type="radio" value={tour.title} />
-                        <label htmlFor="Title">{tour.title}</label>
-                        </div> */}
-                        {/* <br/> */}
-                        {/* <div>
-                        <input defaultChecked  {...register ('groupSize', {required: true})} id='groupSize' type="radio" value={tour.groupSize} />
-                        <label htmlFor="groupSize">{tour.groupSize} persons</label>
-                        </div> */}
-                        {/* <br/> */}
-                        {/* <div>
-                        <input defaultChecked  {...register ('Total', {required: true})} id='Total' type="radio" value={tour.total} />
-                        <label htmlFor="Total">${tour.total} USD</label>
-                        </div> */}
-                        {/* <br/> */}
+                        <div>
+                        <input readOnly hidden type="text" id='title' {...register("title")} defaultValue={tour.title}/>
+                        <input readOnly hidden type="text" id='total' {...register("total")} defaultValue={tour.total}/>
+                        <input readOnly hidden type="text" id='time' {...register("time")} defaultValue={tour.time}/>
+                        <input readOnly hidden type="groupSize" id='groupSize' {...register("groupSize")} defaultValue={tour.groupSize}/>
+                        </div>
                         <select hidden {...register("Status")}>
                             <option value="pending">pending</option>
                             <option value="confirm">confirm</option>
