@@ -1,6 +1,6 @@
 # This is a tour package site named - Happy Tours
 
-This project created with React, node.js, express and mongodb  [Happy Tours](https://amazing-bohr-3026f6.netlify.app). For tour agency company this type of site is necessary. They can check this.
+This project created with React, node.js, express and mongodb  [Happy Tours](https://tour-site-mern.netlify.app/). For tour agency company this type of site is necessary. They can check this.
 
 ## 5 highlights of this project
 

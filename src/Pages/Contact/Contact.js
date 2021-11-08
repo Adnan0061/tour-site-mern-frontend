@@ -26,7 +26,7 @@ const Contact = () => {
                             <Col xs='auto'><Envelope size='46'></Envelope></Col>
                             <Col>
                                 <h6>Email</h6>
-                                <h3>info@ehealth.com</h3>
+                                <h3>info@happytours.com</h3>
                             </Col>
                         </Row>
                     </Col>
