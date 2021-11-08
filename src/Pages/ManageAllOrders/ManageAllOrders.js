@@ -7,14 +7,14 @@ const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() =>{
-        fetch(`https://agile-lowlands-13145.herokuapp.com/orders`)
+        fetch(`https://stormy-headland-18612.herokuapp.com/orders`)
         .then(res => res.json())
         .then(data => setOrders(data))
         // .then(data => console.log(data))
     },[])
 
     const handleDelete = id => {
-        const url = `https://agile-lowlands-13145.herokuapp.com/order/${id}`
+        const url = `https://stormy-headland-18612.herokuapp.com/order/${id}`
         fetch(url, {
             method: 'DELETE'
         })

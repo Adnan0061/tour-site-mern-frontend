@@ -14,9 +14,10 @@ const TourDetails = () => {
  
  
     const onSubmit = data => {
+        // delete data._id;
         console.log(data)
 
-        fetch('https://agile-lowlands-13145.herokuapp.com/orders', {
+        fetch('https://stormy-headland-18612.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -34,11 +35,11 @@ const TourDetails = () => {
     console.log(errors);
      
     useEffect(()=>{
-        fetch(`https://agile-lowlands-13145.herokuapp.com/tour/${id}`)
+        fetch(`https://stormy-headland-18612.herokuapp.com/tour/${id}`)
         .then(res => res.json())
         .then(data => {
             setTour(data)
-            reset(data)
+            reset()
         })
     },[reset])
 

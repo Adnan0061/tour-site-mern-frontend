@@ -12,7 +12,7 @@ const UpdateOrder = () => {
     
     const onSubmit = data => {
         console.log(data);
-        axios.put(`https://agile-lowlands-13145.herokuapp.com/order/${id}`, data)
+        axios.put(`https://stormy-headland-18612.herokuapp.com/order/${id}`, data)
         .then(res => {
             if(res.data){
                 alert('Order is successfully updated')
@@ -22,7 +22,7 @@ const UpdateOrder = () => {
     }
     
     useEffect(()=>{
-        fetch(`https://agile-lowlands-13145.herokuapp.com/order/${id}`)
+        fetch(`https://stormy-headland-18612.herokuapp.com/order/${id}`)
         .then(res => res.json())
         .then(data => {
             setOrder(data)
@@ -31,7 +31,7 @@ const UpdateOrder = () => {
     },[reset])
 
     // useEffect(() => {
-    //         fetch(`https://agile-lowlands-13145.herokuapp.com/order/${id}`)
+    //         fetch(`https://stormy-headland-18612.herokuapp.com/order/${id}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setOrder(data)

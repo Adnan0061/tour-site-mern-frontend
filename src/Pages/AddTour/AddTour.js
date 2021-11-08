@@ -9,7 +9,7 @@ const AddTour = () => {
     
     const onSubmit = data => {
         // console.log(data);
-        axios.post('https://agile-lowlands-13145.herokuapp.com/tours', data)
+        axios.post('https://stormy-headland-18612.herokuapp.com/tours', data)
         .then(res => {
             if(res.data.insertedId){
                 alert('New Tour is successfully added')

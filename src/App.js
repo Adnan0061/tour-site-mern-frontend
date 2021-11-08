@@ -14,6 +14,7 @@ import MyOrders from './Pages/MyOrders/MyOrders';
 import AddTour from './Pages/AddTour/AddTour';
 import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 import UpdateOrder from './Pages/UpdateOrder/UpdateOrder';
+import NotFound from '../src/Pages/NotFound/NotFound'
 
 
 function App() {
@@ -53,6 +54,9 @@ function App() {
           </Route>
           <Route path='/Login'>
             <Login></Login>
+          </Route>
+          <Route path='*'>
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>

@@ -9,7 +9,7 @@ const MyOrders = () => {
     useEffect(() =>{
         const keys = [user.email]
         console.log(keys)
-        fetch(`https://agile-lowlands-13145.herokuapp.com/orders/bykeys`,{
+        fetch(`https://stormy-headland-18612.herokuapp.com/orders/bykeys`,{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -23,7 +23,7 @@ const MyOrders = () => {
     console.log(orders)
 
     const handleDelete = id => {
-        const url = `https://agile-lowlands-13145.herokuapp.com/order/${id}`
+        const url = `https://stormy-headland-18612.herokuapp.com/order/${id}`
         fetch(url, {
             method: 'DELETE'
         })

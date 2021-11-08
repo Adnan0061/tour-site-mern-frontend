@@ -12,7 +12,7 @@ const Home = () => {
     // const [ cart, setCart ] = useCart(tours)
 
     useEffect(()=>{
-        fetch('https://agile-lowlands-13145.herokuapp.com/tours')
+        fetch('https://stormy-headland-18612.herokuapp.com/tours')
         .then(res => res.json())
         .then(data => setTours(data))
     },[])
